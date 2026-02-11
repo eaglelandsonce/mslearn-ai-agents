@@ -6,10 +6,13 @@ from azure.ai.agents import AgentsClient
 from azure.ai.agents.models import ConnectedAgentTool, MessageRole, ListSortOrder, ToolSet, FunctionTool
 from azure.identity import DefaultAzureCredential
 
+# Clear the console
+os.system('cls' if os.name=='nt' else 'clear')
+
 # Load environment variables
 load_dotenv()
 project_endpoint = os.getenv("PROJECT_ENDPOINT")
-model_deployment = os.getenv("MODEL_DEPLOYMENT")
+model_deployment = os.getenv("MODEL_DEPLOYMENT_NAME")
 
 # Connect to the agents client
 agents_client = AgentsClient(
